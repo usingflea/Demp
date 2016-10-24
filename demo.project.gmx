@@ -40,6 +40,7 @@
     <background>background\background0</background>
     <background>background\background1</background>
     <background>background\background2</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -76,15 +77,12 @@
     <object>objects\obj_Rice</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Fausto_Test_Chamber</room>
+    <room>rooms\Level_1</room>
     <room>rooms\Start</room>
     <room>rooms\Menu</room>
     <room>rooms\roomw</room>
     <room>rooms\GO</room>
-    <room>rooms\Level_1</room>
-    <room>rooms\Level_2</room>
-    <room>rooms\Level_3</room>
-    <room>rooms\Level_4</room>
+    <room>rooms\Fausto_Test_Chamber</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

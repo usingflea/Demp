@@ -29,9 +29,6 @@
 hspeed = 2;
 go_left = false;
 go_right = true;
-
-
-current_state = true;
 </string>
           </argument>
         </arguments>
@@ -54,30 +51,24 @@ current_state = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(go_right)
+            <string>if(go_right)
+{
+    if (place_meeting(x + 2, y, obj_wall)) //if (!place_empty(x + 2, y))
     {
-        if (place_meeting(x + 2, y, obj_wall)) //if (!place_empty(x + 2, y))
-        {
-            go_right = false
-            go_left = true;
-            hspeed = -2;
-        }
-
+        go_right = false
+        go_left = true;
+        hspeed = -2;
     }
+}
 else if (go_left)
+{
+    if (place_meeting(x - 2, y, obj_wall)) //if (!place_empty(x - 2, y))
     {
-        if (place_meeting(x - 2, y, obj_wall)) //if (!place_empty(x - 2, y))
-        {
-            go_left = false
-            go_right = true;
-            hspeed = 2;
-        }
-    
-
+        go_left = false
+        go_right = true;
+        hspeed = 2;
     }
-
-
+}
 
 if (instance_exists(obj_player))
 {
@@ -87,7 +78,13 @@ if (instance_exists(obj_player))
     }
 }
 
-
+if(place_meeting(x - 2, y, obj_player) || place_meeting(x + 2, y, obj_player))
+{
+    hspeed = 0
+}else
+{
+    hspeed = spd;
+}
 </string>
           </argument>
         </arguments>

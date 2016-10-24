@@ -17,6 +17,7 @@ if (gamepad_is_connected(0))
     {
         move = 1;
     }
+    //show_message(string(move));
 }else
 {
     move = key_left + key_right;
@@ -63,16 +64,6 @@ if (place_meeting(x+hsp,y,obj_wall))
     }
     hsp = 0;
 }
-
-
-/**if (place_meeting(x+hsp,y,obj_MovingPlatform))
-{
-    while(!place_meeting(x+sign(hsp),y,obj_MovingPlatform))
-    {
-        x += sign(hsp);
-    }
-    hsp = 0;
-}**/
 x += hsp;
 
 //Vertical Collision
@@ -84,21 +75,12 @@ if (place_meeting(x,y+vsp,obj_wall))
     }
     vsp = 0;
 }
-
-
-/**if (place_meeting(x,y+vsp,obj_MovingPlatform))
-{
-    while(!place_meeting(x,y+sign(vsp),obj_MovingPlatform))
-    {
-        y += sign(vsp);
-    }
-    vsp = 0;
-}**/
 y += vsp;
+
 //End collisions
 
 //Ledge grab
-var was_free = !position_meeting(x+(17*hsp_dir), yprevious-13, obj_wall);
+/**var was_free = !position_meeting(x+(17*hsp_dir), yprevious-13, obj_wall);
 var is_not_free = position_meeting(x+(17*hsp_dir), y-13, obj_wall);
 var moving_down = yprevious < y;
 
@@ -119,7 +101,7 @@ if (was_free && is_not_free && moving_down)
         y-=0.9;
        }
        state = ledge_grab;
-    }  
+    }**/  
     
 //Animate
 if (move != 0) image_xscale = move;
