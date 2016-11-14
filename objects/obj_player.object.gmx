@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>//lives = 2;
-grav = 0.9;
+grav = 0.6;
 hsp = 0;
 vsp = 0;
-jumpspeed = 14;
+jumpspeed = 10;
 movespeed = 4;
 jumps = 0;
-jumpsmax = 2;
+jumpsmax = 1;
 sco = 0;
 state = scr_move_state;
 hsp_dir = 1;
